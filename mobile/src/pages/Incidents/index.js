@@ -9,7 +9,7 @@ export default function Incidents() {
     const navigation = useNavigation();
     const [total, setTotal] = useState(0);
     const [incidents, setIncidents] = useState([]);
-    const [pages, setPages] = useState(1);
+    const [page, setPage] = useState(1);
     const [loading, setLoading] = useState(false);
 
     function navigationToDetail(incident){
@@ -34,7 +34,7 @@ export default function Incidents() {
         
         setIncidents([...incidents, ...response.data]);
         setTotal(response.headers['x-total-count']);
-        setPages(pages + 1);
+        setPage(page + 1);
         setLoading(false);
     }
 
